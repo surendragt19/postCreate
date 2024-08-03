@@ -1,0 +1,152 @@
+  /* Add custom CSS for responsiveness */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    color: green;
+    text-decoration: none;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 80%;
+        margin: 30px;
+    }
+    a {
+        margin-left: 0;
+        text-align: center;
+    }
+}
+
+
+
+
+/* card css */
+
+
+.container1 {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.username {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0%;
+    font-size: small;
+}
+
+.username .left {
+    text-align: left;
+}
+.link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+.like {
+    background-color: #4CAF50;
+}
+
+.like:hover {
+    background-color: #45a049;
+}
+
+.edit {
+    background-color: #2196F3;
+}
+
+.edit:hover {
+    background-color: #1976D2;
+}
+.link-logout {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 7px 15px;
+    text-decoration: none;
+    border-radius: 6px;
+    color: #fff;
+    background-color: rgba(255, 0, 0, 0.641);
+    transition: background-color 0.3s;
+}
+.link-logout:hover{
+    background-color: red;
+}
+

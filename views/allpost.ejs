@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Posts</title>
+    <style>
+        .header {
+    display: flex;
+    justify-content: space-between; /* Space out header elements */
+    align-items: center; /* Center vertically */
+    padding: 10px;
+    background-color: #f0f0f0; /* Optional: background color for the header */
+}
+
+.welcome-message {
+    margin: 20px; 
+}
+
+.links {
+    display: flex;
+    gap: 10px; 
+}
+
+
+    </style>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- Header with User Info -->
+    <div class="header">
+        <h3 class="welcome-message">
+            Hello <%= allPosts.user ? user.name : 'Guest' %>
+        </h3>
+        <div class="links">
+            <a href="/profile" style="background-color: rgb(15, 116, 83);" class="link-logout">Profile</a>
+            <a href="/logout" class="link-logout">Logout</a>
+        </div>
+    </div>
+
+    <!-- Display Posts -->
+    <div class="container1">
+        <% allPosts.forEach(post => { %>
+            <div class="card">
+                <p class="username">
+                    <span class="left">@<%= post.user.username %></span>
+                    <span class="right"><%= new Date(post.date).toLocaleString() %></span>
+                </p>
+                <h5 class="content"><%= post.content %></h5>
+                <!-- <small><%= post.likes.length %> Likes</small><br>
+                <a href="/like/<%= post._id %>" class="link like">
+                    <%= post.likes.includes(user._id) ? "Unlike" : "Like" %>
+                </a> -->
+            </div>
+        <% }); %>
+    </div>
+</body>
+</html>

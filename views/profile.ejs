@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Create Post Form</h1>
+        <h3>
+            Hello <%= user.name %>
+            <a href="/allPost" class="link-logout" style="margin-left: 27%;background-color: rgb(15, 116, 83);">All Post</a>
+            <a href="/logout" class="link-logout">Logout</a>
+        </h3>
+        <form id="registration-form" action="/post" method="POST">
+            <label for="content">Content:</label>
+            <textarea id="content" rows="4" name="content" placeholder="Write Post"></textarea>
+            <button type="submit" style="margin-top: 15px;">Create New Post</button>
+        </form>
+    </div>
+
+    <!-- Card -->
+    <div class="container1">
+        <% user.posts.forEach(function(posts) { %>
+            <div class="card">
+                <p class="username">
+                    <span class="left">@<%= user.username %></span>
+                    <span class="right"><%= new Date(posts.date).toLocaleString() %></span>
+                </p>
+                <h5 class="content"><%= posts.content %></h5>
+                <small><%= posts.likes.length %> Likes</small><br>    
+                <a href="/like/<%= posts._id %>" class="link like">
+                    <%= posts.likes.includes(user._id) ? "Unlike" : "Like" %>
+                </a>          
+                <a href="/edit/<%= posts._id %>" class="link edit">Edit</a>
+                <a href="/delete/<%=posts._id %>"style="background-color:red" class="link edit">Delete</a>
+            </div>
+        <% }); %>       
+    </div>
+    
+</body>
+</html>
