@@ -150,13 +150,13 @@ const updatePostController=async(req,res)=>{
 
 const allPostController = async (req, res) => {
     try {
-        const allPosts = await postModel.find().populate('user');
+        const allPost = await postModel.find().populate('user');
 
-        if (!allPosts || allPosts.length === 0) {
+        if (!allPost || allPost.length === 0) {
             return res.status(404).send('No posts found');
         }
-        res.render('allPost', { 
-            allPosts: allPosts,
+        res.render('/allPost', { 
+            allPost: allPosts,
             user: req.user 
         });
     } catch (error) {
